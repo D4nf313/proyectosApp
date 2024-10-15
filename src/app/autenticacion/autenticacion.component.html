@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="container-login">
+    <i class="material-icons">login</i>
+
+    <form [formGroup]="registerForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          formControlName="user"
+          placeholder="Ingrese su nombre"
+        />
+        <mat-error *ngIf="registerForm.get('user')?.hasError('required')">
+          Escriba el nombre de usuario.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          placeholder="Ingrese su email"
+          type="password"
+        />
+        <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+          Escriba la contraseña.
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <button mat-flat-button (click)="login()" color="primary">Entrar</button>
+  </div>
+</div>

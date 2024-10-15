@@ -1,0 +1,40 @@
+<h2 *ngIf="banderaEditar; else crearTarea">Editar Tarea</h2>
+<ng-template #crearTarea>
+  <h2>Crear Tarea</h2>
+</ng-template>
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="tareasForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Título tarea</mat-label>
+      <input matInput formControlName="title" />
+      <mat-error *ngIf="tareasForm.get('title')?.hasError('required')">
+        Escribir el título de la tarea.
+      </mat-error>
+      <mat-error *ngIf="tareasForm.get('title')?.hasError('minlength')">
+        El nombre debe tener minimo 3 caracteres.
+      </mat-error>
+    </mat-form-field>
+
+    <label class="radio-label">¿Esta completa la tarea?*:</label>
+    <mat-radio-group formControlName="completed" aria-label="Select an option">
+      <mat-radio-button value="true">Si</mat-radio-button>
+      <mat-radio-button value="false">No</mat-radio-button>
+    </mat-radio-group>
+    <mat-error
+      *ngIf="
+        tareasForm.get('completed')?.hasError('required') &&
+        (tareasForm.get('completed')?.touched ||
+          tareasForm.get('completed')?.dirty)
+      "
+    >
+      Seleccione una respuesta.
+    </mat-error>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cerrar</button>
+  <button mat-button color="primary" (click)="crearEditarTarea()">
+    Guardar
+  </button>
+</mat-dialog-actions>

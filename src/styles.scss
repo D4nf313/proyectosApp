@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1,h2 {
+  color: #0943b5;
+}
+
+.mat-h1,
+.mat-headline-5,
+.mat-typography .mat-h1,
+.mat-typography .mat-headline-5,
+.mat-typography h1 {
+  font: 400 34px/32px Roboto, sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+}
+.mat-mdc-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button {
+  border-radius: 30px !important;
+  min-width: 150px !important;
+}
+.boton-sin-borde {
+  border: none;
+  background-color: transparent;
+  display: inline-flex;
+  color: #0943b5;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+  color:  aqua !important;
+  --mat-text-button-state-layer-color: currentColor;
+  --mat-text-button-ripple-color: currentColor;
+}

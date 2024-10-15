@@ -1,0 +1,20 @@
+.container {
+    margin: 50px;
+    margin-left:100px;
+  }
+
+  .mat-stroked-button{
+    border-radius: 14px !important;  /* Ajusta el radio de las esquinas según tus preferencias */
+  }
+  .mat-mdc-button, .mat-mdc-unelevated-button, .mat-mdc-raised-button, .mat-mdc-outlined-button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    padding: 23px !important;
+}
+
+.table{
+  margin-top: 20px;
+}
+
+.btn-crear{
+  width: 10px  !important;
+}

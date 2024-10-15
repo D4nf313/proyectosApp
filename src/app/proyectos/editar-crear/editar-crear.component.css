@@ -1,0 +1,56 @@
+.mat-dialog-container {
+    overflow-x: hidden; /* Evita el scroll horizontal */
+  }
+  
+  .dialog-content {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+  }
+  
+  mat-form-field, mat-radio-group {
+    width: auto; 
+    margin-bottom: 10px; 
+    margin-top: 10px;
+
+  }
+  
+  h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+  }
+  
+  mat-dialog-actions{
+    display: flex;
+    align-items: center;
+  }
+
+  mat-dialog-actions {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    width: 100%;
+    margin-top: 10px;
+  }
+/* ancho mat-input  */
+  :host ::ng-deep .mat-mdc-text-field-wrapper {
+    width: 400px !important;
+    z-index: 0;
+  }
+  
+  .radio-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px; /* Espacio entre el label y los radio buttons */
+  }
+  
+
+  .mat-mdc-radio-button.mat-accent {
+
+    --mdc-radio-selected-hover-icon-color: #0943b5 !important;
+    --mdc-radio-selected-icon-color: #0943b5 !important;
+
+}

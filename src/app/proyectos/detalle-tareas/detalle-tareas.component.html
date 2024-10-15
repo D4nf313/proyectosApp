@@ -1,0 +1,62 @@
+<app-navbar />
+<div class="container">
+  <h1>Tareas de {{ nombre }}</h1>
+
+  <button (click)="crear()" class="m-4" mat-flat-button color="primary">
+    Crear nueva tarea
+  </button>
+  <p class="mt-2 mb-2">
+    A continuación se muestran las tareas del desarrollador: si desea
+    editar/eliminar alguna tarea, haga clic enm el botón correspondiente.
+  </p>
+  <div class="table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</th>
+        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+      <ng-container matColumnDef="completed">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Completado</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon *ngIf="element.completed" class="icon-completed"
+            >done</mat-icon
+          >
+          <mat-icon *ngIf="!element.completed" class="icon-not-completed"
+            >close</mat-icon
+          >
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Accion</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            (click)="editar(element)"
+            aria-label="corregir"
+            class="boton-sin-borde px-4 py-2"
+          >
+            <mat-icon class="icon-table">create</mat-icon>
+
+            <span class="px-2">Editar</span>
+          </button>
+          <button
+            (click)="eliminar(element.id)"
+            class="boton-sin-borde px-4 py-2"
+            aria-label="eliminar"
+          >
+            <mat-icon class="pt-2 icon-table">delete</mat-icon>
+            <span class="px-2"> Eliminar</span>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [length]="resultsLength" pageSize="5"></mat-paginator>
+  </div>
+  <div class="boton">
+    <button class="back" mat-stroked-button routerLink="/proyectos/listar">
+      Regresar
+    </button>
+  </div>
+</div>
