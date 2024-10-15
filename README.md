@@ -10,9 +10,9 @@ El proyecto cuenta primeramente con un login, por le momento solo se pude ingres
   https://jsonplaceholder.typicode.com/todos 
   al darle clic en detalle el sistema redirecciona a la vista de detalle-tareas la cual tambien muestra en forma de tabla las tareas vinculadas a ese usuario. En esa vista se realiza una especie de CRUD, donde a traves del servicio de proyectos permito almacenar en el localstorage una nueva tarea, editar o eliminar.
   Para lograr crear o editar una tarea realice un componente que funciona en forma de modal reutilizable en ambas funcionalidades, funciona con  reactive forms y tiene alidaciones de requerido y minlengh y confirmacion de accion con snackbars.
-El sistema ademas tiene un navbar que es un componente standalone que se integra a la vista de listar-proyectos y detalle-tareas, el cual cuenta con un boton para cerrar sesion y volver a la vista del login.( cuando se cierra sesion se eliminan todas las tareas editadas guardadas o eliminadas hechas la sesion.
+El sistema ademas tiene un navbar que es un componente standalone que se integra a la vista de listar-proyectos y detalle-tareas, el cual cuenta con un boton para cerrar sesion y volver a la vista del login.( cuando se cierra sesion se eliminan todas las tareas editadas guardadas o eliminadas hechas la sesion).
 la vista detalle y listar cuentan con can activate para que validen si el estado del aplicativo es autenticado atraves de localstorage
-Se integro un interceptor para manejar las posibles respuestas de error q pueda generar el backend mostrando el error por medio ed snackbars.
+Se integro un interceptor para manejar las posibles respuestas de error q pueda generar el backend mostrando el error por medio de snackbars.
   
 
 
